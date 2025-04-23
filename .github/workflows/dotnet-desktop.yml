@@ -8,12 +8,11 @@ on:
 
 jobs:
   build-and-test:
-
     runs-on: windows-latest
 
     env:
-      Solution_Name: CybersecurityChatbot.sln   # Replace with your actual solution file
-      Test_Project_Path: CyberBot.Tests/CyberBot.Tests.csproj   # Replace if you have test project
+      Solution_Name: CybersecurityBot.sln   
+      Test_Project_Path: CybersecurityBot.Tests/CybersecurityBot.Tests.csproj  
 
     steps:
     - name: Checkout code
@@ -32,4 +31,4 @@ jobs:
 
     - name: Run tests
       if: env.Test_Project_Path != ''
-      run: dotnet test $env:Test_Project_Path --no-build --verbosity normal
+      run: dotnet test $env:Test_Project_Path --no-build --verbosity normal
